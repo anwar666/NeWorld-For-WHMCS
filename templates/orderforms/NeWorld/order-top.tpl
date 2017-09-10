@@ -3,7 +3,7 @@
 		<div class="container">
 			<ul class="row">
 				<li class="col-xs-6 col-sm-3 {if $filename eq "cart" and $smarty.get.a eq ""}active{/if}">
-					<a href="{$WEB_ROOT}/cart.php">
+					<a href="https://www.fastervm.com/">
 						<img src="{$WEB_ROOT}/templates/orderforms/{$carttpl}/img/review.svg" class="theme-gray size-md">
 						{$LANG.chooseproduct}
 			        </a>

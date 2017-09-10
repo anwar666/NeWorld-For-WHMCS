@@ -22,6 +22,35 @@
 		            <form id="frmProductDomain" onsubmit="checkdomain();return false">
 		
 		                <div class="domain-selection-options">
+		                	{if $owndomainenabled}
+		                        <div class="option">
+		                            <label>
+		                                <input type="radio" name="domainoption" value="owndomain" id="selowndomain" />{$LANG.cartexistingdomainchoice|sprintf2:$companyname}
+		                            </label>
+		                            <div class="domain-input-group clearfix" id="domainowndomain">
+		                                <div class="row">
+		                                    <div class="col-sm-9">
+		                                        <div class="row domains-row">
+		                                            <div class="col-xs-2 text-right">
+		                                                <p class="form-control-static">www.</p>
+		                                            </div>
+		                                            <div class="col-xs-7">
+		                                                <input type="text" id="owndomainsld" value="{$sld}" placeholder="{$LANG.yourdomainplaceholder}" class="form-control" autocapitalize="none" />
+		                                            </div>
+		                                            <div class="col-xs-3">
+		                                                <input type="text" id="owndomaintld" value="{$tld|substr:1}" placeholder="{$LANG.yourtldplaceholder}" class="form-control" autocapitalize="none" />
+		                                            </div>
+		                                        </div>
+		                                    </div>
+		                                    <div class="col-sm-2">
+		                                        <button type="submit" class="btn btn-primary btn-block" id="useOwnDomain">
+		                                            {$LANG.orderForm.use}
+		                                        </button>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    {/if}
 		                    {if $incartdomains}
 		                        <div class="option">
 		                            <label>
@@ -81,7 +110,7 @@
 		                        </div>
 		                    {/if}
 		                    {if $transferdomainenabled}
-		                        <div class="option">
+	<!-- 	                        <div class="option">
 		                            <label>
 		                                <input type="radio" name="domainoption" value="transfer" id="seltransfer" />{$LANG.carttransferdomainchoice|sprintf2:$companyname}
 		                            </label>
@@ -111,37 +140,9 @@
 		                                    </div>
 		                                </div>
 		                            </div>
-		                        </div>
+		                        </div> -->
 		                    {/if}
-		                    {if $owndomainenabled}
-		                        <div class="option">
-		                            <label>
-		                                <input type="radio" name="domainoption" value="owndomain" id="selowndomain" />{$LANG.cartexistingdomainchoice|sprintf2:$companyname}
-		                            </label>
-		                            <div class="domain-input-group clearfix" id="domainowndomain">
-		                                <div class="row">
-		                                    <div class="col-sm-9">
-		                                        <div class="row domains-row">
-		                                            <div class="col-xs-2 text-right">
-		                                                <p class="form-control-static">www.</p>
-		                                            </div>
-		                                            <div class="col-xs-7">
-		                                                <input type="text" id="owndomainsld" value="{$sld}" placeholder="{$LANG.yourdomainplaceholder}" class="form-control" autocapitalize="none" />
-		                                            </div>
-		                                            <div class="col-xs-3">
-		                                                <input type="text" id="owndomaintld" value="{$tld|substr:1}" placeholder="{$LANG.yourtldplaceholder}" class="form-control" autocapitalize="none" />
-		                                            </div>
-		                                        </div>
-		                                    </div>
-		                                    <div class="col-sm-2">
-		                                        <button type="submit" class="btn btn-primary btn-block" id="useOwnDomain">
-		                                            {$LANG.orderForm.use}
-		                                        </button>
-		                                    </div>
-		                                </div>
-		                            </div>
-		                        </div>
-		                    {/if}
+		                    
 		                    {if $subdomains}
 		                        <div class="option">
 		                            <label>
